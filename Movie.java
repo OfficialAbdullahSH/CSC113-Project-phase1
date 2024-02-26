@@ -8,7 +8,7 @@ public class Movie {
         this.movieDuration = movieDuration;
         this.releaseDate = releaseDate;
     }
-    //dcawkmdawopdmaw
+
     public void display(){
 
     }
