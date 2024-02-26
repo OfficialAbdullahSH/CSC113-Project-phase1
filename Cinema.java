@@ -68,7 +68,7 @@ public class Cinema extends Company {
 
         for (int i = 0; i < numberOfBoxOffices; i++)
             if (boxOffice.getBoxOfficeID() == arrBoxOffice[i].getBoxOfficeID()) {
-                return i; // returning index of room
+                return i; // returning index of BoxOffice
             }
         return -1;
     }
