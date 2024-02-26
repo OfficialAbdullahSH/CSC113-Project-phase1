@@ -22,6 +22,10 @@ public class Customer {
         return age;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void display(){
         System.out.println("Name: " + name + ", Email: " + email + ", Age: " + age);
     }
