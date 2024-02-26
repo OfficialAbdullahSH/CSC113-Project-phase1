@@ -23,6 +23,6 @@ public class Customer {
     }
 
     public void display(){
-
+        System.out.println("Name: " + name + ", Email: " + email + ", Age: " + age);
     }
 }
