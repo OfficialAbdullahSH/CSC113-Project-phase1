@@ -1,9 +1,16 @@
 public class BoxOffice {
+
+    private int boxOfficeID;
     private Movie [] movies = new Movie[20];
     private int numberOfMovies;
     private int numberOfTickets;
 
-    public BoxOffice() {
+    public BoxOffice(int ID) {
+        this.boxOfficeID = boxOfficeID;
+    }
+
+    public int getBoxOfficeID() {
+        return boxOfficeID;
     }
 
     public Movie[] getMovies() {
