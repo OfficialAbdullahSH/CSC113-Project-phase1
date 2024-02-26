@@ -1,10 +1,3 @@
-public abstract class Company {
+public class Company {
     protected String name;
-
-    public abstract Company(String name);
-
-
-    public String getName() {
-        return name;
-    }
 }
