@@ -17,6 +17,6 @@ public class Room {
     }
 
     public void display(){
-
+        System.out.println("Room number:"+ getRoomNumber()+" Room capacity"+getCapacity());
     }
 }

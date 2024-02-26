@@ -7,7 +7,6 @@ public class Cinema extends Company {
     private int numberOfRooms;
     private BoxOffice [] arrBoxOffice = new BoxOffice[3];
     private int numberOfBoxOffices;
-
     public Cinema(String name, String address) {
         super(name);
         this.address = address;
@@ -75,12 +74,12 @@ public class Cinema extends Company {
 
     public void display(){
         System.out.println("Cinema name: " + name);
-        System.out.print(", Cinema addreass: " + address);
+        System.out.print(", Cinema address: " + address);
 
         System.out.println("Number of room/s: " + numberOfRooms);
         System.out.print(", number of box office/s: " + numberOfBoxOffices);
 
-        System.out.println("");
+        System.out.println();
     }
 }
 
