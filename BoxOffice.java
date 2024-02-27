@@ -20,52 +20,53 @@ public class BoxOffice {
         return movies;
     }
 
-    public boolean addMovie(String r){
-     if(numberOfTickets < movies.length && searchMovie(r)){
+    public boolean addMovie(Movie r){
+     if(numberOfTickets < movies.length && searchMovie(r.getMovieName())){
          movies[numberOfMovies] = r;
-         system.out.println("movie has been added");
+         System.out.println("movie has been added");
          numberOfMovies++;
          return true;
      }
      else {
-         system.out.println("we are full ");
+         System.out.println("we are full ");
      return false;
      }
 
     }
 
-    public boolean removeMovie(String m){
-     for(int i = 0 ; i < numberOfTickets ; i++){
-         if(movies[i].getMovieName.equals(m) && searchMovie(m)){
-             movies[i]=null;
-             movies[i]=movies[numberOfMovies-1];
+    public boolean removeMovie(Movie m){
+     for(int i = 0 ; i < numberOfMovies ; i++) {
+         if (movies[i].getMovieName.equals(m) && searchMovie(m.getMovieName())) {
+             movies[i] = null;
+             movies[i] = movies[numberOfMovies - 1];
              numberOfMovies--;
-             system.out.println(" the movie has been removed");
+             System.out.println(" the movie has been removed");
+             return true;
          }
-         else
-             system.out.println("the movie is not here");
      }
+        System.out.println("the movie is not here");
+        return false;
     }
 
     public boolean Booking(String n) {
         if (searchMovie(n)) {
-            system.out.println(" the movie has been booked");
+            System.out.println(" the movie has been booked");
             numberOfTickets--;
             return true;
         }
         else{
-            system.out.println(" the movie is not here");
+            System.out.println(" the movie is not here");
             return false;
         }
     }
-    public boolean cancleBooking(){
+    public boolean cancleBooking(String n){
         if (searchMovie(n)) {
-            system.out.println(" the booking has been cancled");
+            System.out.println(" the booking has been cancled");
             numberOfTickets++;
             return true;
         }
         else{
-            system.out.println(" the movie is not here");
+            System.out.println(" the movie is not here");
             return false;
         }
     }
@@ -73,18 +74,18 @@ public class BoxOffice {
     public boolean searchMovie (String name){
       for (int i = 0 ; i < numberOfTickets ; i++){
           if (movies[i].getMovieName().equals(name))
-              system.out.println(" we have the movie ");
+              System.out.println(" we have the movie ");
           return true;
       }
-      system.out.println(" the movie is not here ");
+        System.out.println(" the movie is not here ");
       return false;
     }
 
     public void display(){
-      for (int i = 0 ; i < numberOfTickets ; i++){
-          system.out.println(movies[i].display());
-          system.out.println(numberOfMovies);
-          system.out.println(numberOfTickets);
+      for (int i = 0 ; i < numberOfMovies ; i++){
+          System.out.println(movies[i].display());
+          System.out.println(numberOfMovies);
+          System.out.println(numberOfTickets);
       }
     }
 }
