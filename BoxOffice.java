@@ -22,9 +22,9 @@ public class BoxOffice {
 
     public boolean addMovie(Movie r){
      if(numberOfTickets < movies.length){
-         movies[numberOfTickets] = r;
+         movies[numberOfMovies] = r;
          system.out.println("movie has been added");
-         numberOfTickets++;
+         numberOfMovies++;
          return true;
      }
      else {
@@ -38,8 +38,8 @@ public class BoxOffice {
      for(int i = 0 ; i < numberOfTickets ; i++){
          if(movies[i].getMovieName.equals(m)){
              movies[i]=null;
-             movies[i]=movies[movies.length-1];
-             numberOfTickets--;
+             movies[i]=movies[numberOfMovies-1];
+             numberOfMovies--;
              system.out.println(" the movie has been removed");
          }
          else
@@ -76,15 +76,15 @@ public class BoxOffice {
               system.out.println(" we have the movie ");
           return true;
       }
-      system.out.printl(" the movie is not here ");
+      system.out.println(" the movie is not here ");
       return false;
     }
 
     public void display(){
       for (int i = 0 ; i < numberOfTickets ; i++){
-          system.out.printl(movies[i].display());
-          system.out.printl(numberOfMovies);
-          system.out.printl(numberOfTickets);
+          system.out.println(movies[i].display());
+          system.out.println(numberOfMovies);
+          system.out.println(numberOfTickets);
       }
     }
 }
