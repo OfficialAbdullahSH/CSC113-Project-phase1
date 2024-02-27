@@ -20,8 +20,8 @@ public class BoxOffice {
         return movies;
     }
 
-    public boolean addMovie(Movie r){
-     if(numberOfTickets < movies.length){
+    public boolean addMovie(String r){
+     if(numberOfTickets < movies.length && searchMovie(r)){
          movies[numberOfMovies] = r;
          system.out.println("movie has been added");
          numberOfMovies++;
@@ -36,7 +36,7 @@ public class BoxOffice {
 
     public boolean removeMovie(String m){
      for(int i = 0 ; i < numberOfTickets ; i++){
-         if(movies[i].getMovieName.equals(m)){
+         if(movies[i].getMovieName.equals(m) && searchMovie(m)){
              movies[i]=null;
              movies[i]=movies[numberOfMovies-1];
              numberOfMovies--;
