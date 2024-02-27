@@ -6,38 +6,85 @@ public class BoxOffice {
     private int numberOfTickets;
 
     public BoxOffice(int ID) {
+
         this.boxOfficeID = boxOfficeID;
     }
 
     public int getBoxOfficeID() {
+
         return boxOfficeID;
     }
 
     public Movie[] getMovies() {
+
         return movies;
     }
 
-    public boolean addMovie(){
+    public boolean addMovie(Movie r){
+     if(numberOfTickets < movies.length){
+         movies[numberOfTickets] = r;
+         system.out.println("movie has been added");
+         numberOfTickets++;
+         return true;
+     }
+     else {
+         system.out.println("we are full ");
+     return false;
+     }
 
     }
 
-    public boolean removeMovie(){
-
+    public boolean removeMovie(String m){
+     for(int i = 0 ; i < numberOfTickets ; i++){
+         if(movies[i].getMovieName.equals(m)){
+             movies[i]=null;
+             movies[i]=movies[movies.length-1];
+             numberOfTickets--;
+             system.out.println(" the movie has been removed");
+         }
+         else
+             system.out.println("the movie is not here");
+     }
     }
 
-    public boolean Booking(){
-
+    public boolean Booking(String n) {
+        if (searchMovie(n)) {
+            system.out.println(" the movie has been booked");
+            numberOfTickets--;
+            return true;
+        }
+        else{
+            system.out.println(" the movie is not here");
+            return false;
+        }
     }
-
     public boolean cancleBooking(){
-
+        if (searchMovie(n)) {
+            system.out.println(" the booking has been cancled");
+            numberOfTickets++;
+            return true;
+        }
+        else{
+            system.out.println(" the movie is not here");
+            return false;
+        }
     }
 
-    public Movie searchMovie (String name){
-
+    public boolean searchMovie (String name){
+      for (int i = 0 ; i < numberOfTickets ; i++){
+          if (movies[i].getMovieName().equals(name))
+              system.out.println(" we have the movie ");
+          return true;
+      }
+      system.out.printl(" the movie is not here ");
+      return false;
     }
 
     public void display(){
-
+      for (int i = 0 ; i < numberOfTickets ; i++){
+          system.out.printl(movies[i].display());
+          system.out.printl(numberOfMovies);
+          system.out.printl(numberOfTickets);
+      }
     }
 }
