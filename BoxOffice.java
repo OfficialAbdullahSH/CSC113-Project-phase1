@@ -20,9 +20,9 @@ public class BoxOffice {
         return movies;
     }
 
-    public boolean addMovie(Movie r){
-     if(numberOfTickets < movies.length && searchMovie(r.getMovieName())){
-         movies[numberOfMovies] = r;
+    public boolean addMovie(Movie movie){
+     if(numberOfMovies < movies.length && searchMovie(movie.getMovieName())){
+         movies[numberOfMovies] = movie;
          System.out.println("movie has been added");
          numberOfMovies++;
          return true;
@@ -34,11 +34,11 @@ public class BoxOffice {
 
     }
 
-    public boolean removeMovie(Movie m){
+    public boolean removeMovie(Movie movie){
      for(int i = 0 ; i < numberOfMovies ; i++) {
-         if (movies[i].getMovieName.equals(m) && searchMovie(m.getMovieName())) {
-             movies[i] = null;
+         if (movies[i].getMovieName().equals(movie) && searchMovie(movie.getMovieName())) {
              movies[i] = movies[numberOfMovies - 1];
+             movies[numberOfMovies - 1] = null;
              numberOfMovies--;
              System.out.println(" the movie has been removed");
              return true;
@@ -72,7 +72,7 @@ public class BoxOffice {
     }
 
     public boolean searchMovie (String name){
-      for (int i = 0 ; i < numberOfTickets ; i++){
+      for (int i = 0 ; i < numberOfMovies ; i++){
           if (movies[i].getMovieName().equals(name))
               System.out.println(" we have the movie ");
           return true;
@@ -83,9 +83,9 @@ public class BoxOffice {
 
     public void display(){
       for (int i = 0 ; i < numberOfMovies ; i++){
-          System.out.println(movies[i].display());
-          System.out.println(numberOfMovies);
-          System.out.println(numberOfTickets);
+          System.out.println("Number of movies: " + numberOfMovies);
+          System.out.print(i + ":");
+          movies[i].display();
       }
     }
 }
