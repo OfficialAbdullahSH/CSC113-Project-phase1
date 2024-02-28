@@ -8,6 +8,11 @@ public class Room {
         this.capacity = capacity;
     }
 
+    public Room(Room room) { // copy constructor
+        this.roomNumber = room.roomNumber;
+        this.capacity = room.capacity;
+    }
+
     public int getRoomNumber() {
         return roomNumber;
     }

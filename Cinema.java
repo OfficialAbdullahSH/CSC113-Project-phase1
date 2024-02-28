@@ -3,15 +3,17 @@ public class Cinema extends Company {
 
     private String address;
 
-    private Room [] arrRooms = new Room[15];
+    private Room [] arrRooms;
     private int numberOfRooms;
-    private BoxOffice [] arrBoxOffice = new BoxOffice[3];
+    private BoxOffice [] arrBoxOffice;
     private int numberOfBoxOffices;
     public Cinema(String name, String address) {
         super(name);
         this.address = address;
         this.numberOfRooms = 0 ;
         this.numberOfBoxOffices = 0;
+        arrRooms = new Room[15];
+        arrBoxOffice = new BoxOffice[3];
     }
 
 
@@ -22,7 +24,7 @@ public class Cinema extends Company {
 
     public boolean addRoom (Room room){
         if ((numberOfRooms < arrRooms.length) && (searchRoom(room) != -1)) {
-            arrRooms[numberOfRooms++] = room;
+            arrRooms[numberOfRooms++] = new Room(room);
             return true;
         }return false;
     }
