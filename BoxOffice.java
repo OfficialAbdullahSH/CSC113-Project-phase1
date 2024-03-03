@@ -37,9 +37,9 @@ public class BoxOffice {
 
     public void addMovie(String nameM, int durationM, int releasedateM, int roomNumber) {
         movie = new Movie(nameM, durationM, releasedateM);
-        if (roomNumber <= arrRooms.length && roomNumber > 0) {
-            arrRooms[roomNumber - 1] = new Room(roomNumber, 15);
-            arrRooms[roomNumber - 1].SignMovieRoom(movie);
+        if (numberOfRooms < arrRooms.length && roomNumber > 0) {
+            arrRooms[numberOfRooms] = new Room(roomNumber, 15);
+            arrRooms[numberOfRooms++].SignMovieRoom(movie);
             System.out.println(nameM + " movie added!");
         } else {
             System.out.println("Invalid room number. BoxOffice is full of movies.");
